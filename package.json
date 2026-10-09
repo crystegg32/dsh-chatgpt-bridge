@@ -11,6 +11,10 @@
       "default": "./lib/index.js"
     },
     "./client": "./lib/client.js",
+    "./readonly": {
+      "types": "./lib/types/readonly/index.d.ts",
+      "default": "./lib/readonly/index.js"
+    },
     "./package.json": "./package.json"
   },
   "files": [
@@ -19,6 +23,7 @@
     "cordis.patch.yml",
     "cordis.headless.patch.yml",
     "README.md",
+    "docs/BRI94-READONLY-MCP.md",
     "docs/dsh-compatibility-2026-09-07.md",
     "docs/dsh-compatibility-2026-09-27.md",
     "docs/dsh-compatibility-2026-09-28.md",
@@ -65,6 +70,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node scripts/test.mjs",
     "test:release": "node scripts/release-package-test.mjs",
+    "test:readonly:release": "node scripts/readonly-package-test.mjs",
     "clean": "node --input-type=module -e \"import { rmSync } from 'node:fs'; rmSync('lib', { recursive: true, force: true })\"",
     "dogfood": "node scripts/dogfood.mjs",
     "dogfood:goal": "node scripts/goal-control-dogfood.mjs",
