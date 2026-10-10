@@ -40,3 +40,29 @@ must explicitly select `dsh-chatgpt-bridge/readonly`.
 ### Needs verification
 - Linear/GitHub/final, exact conversation linkage and failure phase.
 - Live host/control, unattended triggers and trustworthy result import.
+
+## 2026-10-10 — Codex native Host checkpoint publication
+
+### Summary
+- Native readonly official isolated Host integration PASS; issue overall PARTIAL.
+
+### Changed
+- Added safe results/cleanup/limits and issue gate table; archived minimal entry
+  pathsEqual repair and local source hashes. No account launchers/IDs/raw data.
+
+### Tested
+- Historical official Host: four tools, five reads, three refusals, HTTP401;
+  completed/unknown, no Agent/model, source unchanged, cleanup.
+- Offline repair: three Windows Node24.19.0 regressions and local preflight PASS.
+- Native planned five calls successful, operator35s; six audit calls including
+  earlier health. No direct audit conversation binding.
+- Publication repeats no runtime/tests and claims no formal CI.
+
+### Next
+- Review checkpoint, then scope offline existing-Controller boundary design.
+- Do not repeat connectivity or reuse closed acceptance grant.
+
+### Needs verification
+- Isolated start/run/status, broader review/revise, live execution,
+  unattended trigger/result import and trusted policy/cost.
+- Original combined multi-app/Bridge final acquisition remain PARTIAL.

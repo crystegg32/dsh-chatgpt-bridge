@@ -1,0 +1,8 @@
+--- a/final-host-tunnel-server.mjs
++++ b/final-host-tunnel-server.mjs
+@@ -17,1 +17,2 @@
+ import {closeLocalMcp} from './close-local-mcp.mjs';
++import {pathsEqual} from './node_modules/dsh-chatgpt-bridge/lib/paths.js';
+@@ -58,1 +59,1 @@
+-  const rows=ctx.workspaceRegistry.list();report.workspace_count=rows.length;assert.equal(rows.length,1);assert.equal(rows[0].path.replaceAll('\\','/').toLowerCase(),workspace.toLowerCase());
++  const rows=ctx.workspaceRegistry.list();report.workspace_count=rows.length;assert.equal(rows.length,1);assert.ok(pathsEqual(rows[0].path,workspace));

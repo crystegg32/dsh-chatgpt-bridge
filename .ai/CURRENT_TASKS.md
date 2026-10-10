@@ -1,5 +1,18 @@
 # Current tasks
 
+Latest: native isolated readonly official Host integration PASS; BRI-94 overall
+PARTIAL. See `docs/BRI94-NATIVE-HOST-CHECKPOINT.md`. Planned five native calls
+succeeded plus one earlier extra health separately disclosed. Official Host
+loads no Agent/model; synthetic setup and reads distinguished. Local Windows
+path repair tests/preflight passed. Final run closed; no more connectivity tests.
+
+Remaining: scope existing Controller design, isolated start/run/status and broader
+review/revise. Full combined multi-app, Bridge final receipt, live execution,
+unattended trigger/result import and trusted cost/policy unverified. Publication
+authorizes no control/mutation/runtime. Existing PRs/product/history unchanged.
+
+## Prior probe checkpoint (preserved)
+
 BRI-94 remains PARTIAL. Reviewed readonly product candidate is `8340346`, upstream
 `b78a575`. This independent branch preserves acceptance/decision evidence only.
 
@@ -24,3 +37,7 @@ See `docs/BRI94-NATIVE-PROBE-CHECKPOINT.md` for facts, limits and archive scope.
 2026-10-10, Codex: archived reviewed diagnostics and de-identified results. Prior
 27 Python / four Node offline tests passed again on the publication copies;
 source provenance recorded. No runtime turn sent by this publication session.
+
+2026-10-10 later, Codex: independently published native Host results, local entry
+repair hunk and issue gap table from16b7ab0. No new tests, product changes,
+merge/Done or control authorization.
