@@ -16,3 +16,27 @@ No source text, session transcript, token or actual operator configuration store
 Only synthetic services and temporary localhost listeners were exercised.
 The original package root remains upstream full-control; future isolated loading
 must explicitly select `dsh-chatgpt-bridge/readonly`.
+
+## 2026-10-10 — Codex checkpoint publication
+
+### Summary
+- Preserve current BRI-94 progress on an independent discussion branch.
+- Native health succeeded; full multi-app/final receipt remains unverified.
+
+### Changed
+- Added safe chronology, evidence ceiling and route recommendation.
+- Archived diagnostic source/tests outside package files and exports.
+- Updated current tasks; no product/runtime/policy/historical-state changes.
+
+### Tested
+- Original candidate: 27 Python and four Node offline tests PASS; readback review
+  PASS. Existing Bridge focused regressions: 11 PASS.
+- Publication copies: 27 Python tests PASS (0.458s), four Node tests PASS (100.1ms)
+  on Windows Python3.13.11 / Node24.19.0; sources match original hashes.
+
+### Next
+- Discuss checkpoint; no further runtime sends under consumed grant.
+
+### Needs verification
+- Linear/GitHub/final, exact conversation linkage and failure phase.
+- Live host/control, unattended triggers and trustworthy result import.

@@ -1,15 +1,26 @@
 # Current tasks
 
-BRI-94: isolated no-model Incoming MCP candidate. Based on upstream exact
-`b78a575e886de1644db5273df88907bd2f2163fa`; branch `codex/bri-94-readonly-mcp`.
+BRI-94 remains PARTIAL. Reviewed readonly product candidate is `8340346`, upstream
+`b78a575`. This independent branch preserves acceptance/decision evidence only.
 
-- Separate `./readonly` export; four metadata-only tools.
-- Reuse MCP transport and V3 persistence read compatibility; no full Bridge lifecycle.
-- Windows synthetic MCP tests and independent review; final totals in PR/Linear.
-- Next gate: reviewed exact commit, isolated real host/standard client, then
-  independent Chrome account check and separately authorized connection setup.
-- No daily installation, new Tunnel, worker/model, deployment or merge authorized.
-- Account capability unknown; logged-out in-app browser is not evidence about
-  independent Chrome or a generic MCP client's compatibility.
+- Four-tool synthetic and selected historical persisted-snapshot account tests
+  passed; not live Controller/worker status proof.
+- One native probe grant was consumed. Native-phase `dsh_health` succeeded;
+  final acquisition returned HTTP504 after107.412s. Linear/GitHub/final and exact
+  conversation linkage remain unverified.
+- Owned tab and isolated Tunnel/server cleanup verified. Failed state, markers
+  and historical evidence unchanged. No retry/resend/continuation.
+- Diagnostic source archive is for discussion, not product packaging or a new
+  execution grant. Existing readonly/helper Draft PR branches stay unchanged.
+- Recommendation, not adopted policy: interactive native reference workflow,
+  local-first execution and policy-controlled optional external review.
+- No worker/model/task/control, daily install, new Tunnel/test, deployment,
+  merge or Done is authorized by this checkpoint.
 
-See `docs/BRI94-READONLY-MCP.md` for boundaries and the minimal acceptance plan.
+See `docs/BRI94-NATIVE-PROBE-CHECKPOINT.md` for facts, limits and archive scope.
+
+## Last close
+
+2026-10-10, Codex: archived reviewed diagnostics and de-identified results. Prior
+27 Python / four Node offline tests passed again on the publication copies;
+source provenance recorded. No runtime turn sent by this publication session.

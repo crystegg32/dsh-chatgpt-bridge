@@ -1,0 +1,58 @@
+{
+  "readonly_base": "8340346f3ed606c4fcecee10d9b544368f5c4bd8",
+  "bridge_source": "23f165e9ba200df7735997c48427775b783414a8",
+  "source_copies_unchanged": true,
+  "files": [
+    {
+      "path": "admission.py",
+      "original_local_sha256": "82ee7fdc6680efc57db84314b063a4a8628c4170137c8027d66f7252c2fb1d4a",
+      "archived_git_bytes_sha256": "82ee7fdc6680efc57db84314b063a4a8628c4170137c8027d66f7252c2fb1d4a"
+    },
+    {
+      "path": "execution.py",
+      "original_local_sha256": "735134ff436c628b33aecd4341a56919ae9d289af607002bf1b4a3cbf3c29663",
+      "archived_git_bytes_sha256": "735134ff436c628b33aecd4341a56919ae9d289af607002bf1b4a3cbf3c29663"
+    },
+    {
+      "path": "once-ready-receipt.mjs",
+      "original_local_sha256": "ea4a9147a8035e21ab29ac091aaf986c46f94b9010c5dd61a330e89c612cc972",
+      "archived_git_bytes_sha256": "ea4a9147a8035e21ab29ac091aaf986c46f94b9010c5dd61a330e89c612cc972"
+    },
+    {
+      "path": "once-ready-receipt.test.mjs",
+      "original_local_sha256": "e1a73458f7128c9da263b924552bc00e71ed39fee4feab3db0770b53e0ff052f",
+      "archived_git_bytes_sha256": "e1a73458f7128c9da263b924552bc00e71ed39fee4feab3db0770b53e0ff052f"
+    },
+    {
+      "path": "run_probe.py",
+      "original_local_sha256": "f0e9733e18150876351c0b812b73786fa646b7f4cac2d9c3e705da12667458e1",
+      "archived_git_bytes_sha256": "f0e9733e18150876351c0b812b73786fa646b7f4cac2d9c3e705da12667458e1"
+    },
+    {
+      "path": "single_attempt_adapter.py",
+      "original_local_sha256": "0199298ff3a77d2440f2a775db08c38ad5739b18680fa168f770c6d9a61b225c",
+      "archived_git_bytes_sha256": "0199298ff3a77d2440f2a775db08c38ad5739b18680fa168f770c6d9a61b225c"
+    },
+    {
+      "path": "test_admission.py",
+      "original_local_sha256": "df983f8c3394ef5f5c25f563343a5d1eded6b36d224e786e320b5ffa05d1f683",
+      "archived_git_bytes_sha256": "df983f8c3394ef5f5c25f563343a5d1eded6b36d224e786e320b5ffa05d1f683"
+    },
+    {
+      "path": "test_execution.py",
+      "original_local_sha256": "d7c32e70f537307a47f47d3d2fe26c76b7cdd8f9886cc98abfed4ab29095dc1a",
+      "archived_git_bytes_sha256": "d7c32e70f537307a47f47d3d2fe26c76b7cdd8f9886cc98abfed4ab29095dc1a"
+    },
+    {
+      "path": "test_run_probe.py",
+      "original_local_sha256": "84c5191ef316dfc8f19086a88e103ae1fb455c38281a05d6a5899d7d0a8af084",
+      "archived_git_bytes_sha256": "84c5191ef316dfc8f19086a88e103ae1fb455c38281a05d6a5899d7d0a8af084"
+    },
+    {
+      "path": "test_single_attempt_adapter.py",
+      "original_local_sha256": "9466bbad9f720bbcae1492c6f774a3e05c6921e16f891005929fee19c85f387c",
+      "archived_git_bytes_sha256": "9466bbad9f720bbcae1492c6f774a3e05c6921e16f891005929fee19c85f387c"
+    }
+  ],
+  "hash_scope": "Original hashes describe reviewed local bytes; archived hashes describe Git index bytes. Git text filters may normalize line endings only."
+}
