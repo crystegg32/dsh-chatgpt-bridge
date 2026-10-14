@@ -13,3 +13,7 @@ BRI-94: isolated no-model Incoming MCP candidate. Based on upstream exact
   independent Chrome or a generic MCP client's compatibility.
 
 See `docs/BRI94-READONLY-MCP.md` for boundaries and the minimal acceptance plan.
+
+## Last close
+
+2026-10-14 Codex: BRI-94 M1 local readonly integration PASS; optional same-server two-tool seam, real saved BRI-108 DONE readback, no state changes. Windows Node22.23.2: bridge35+7, cross-repo12, M2 planner13 tests PASS. Current native tunnel probe429; WebGPT E2E unverified. M2 pure request planning only; concrete shared Host delegation/admission and account write capability remain gates. No model/Controller mutation/Linear write/daily/main/connection changes. See docs/BRI94-M1-M2-CHECKPOINT-20261014.md.
