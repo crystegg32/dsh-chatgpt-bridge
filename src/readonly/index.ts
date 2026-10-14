@@ -2,10 +2,11 @@
 import type { Context } from '@deepseek-ai/cordis';
 import { z } from 'zod';
 import { startHttpServer } from '../http.js';
-import { createReadonlyMcpServer } from './mcp.js';
+import { createReadonlyMcpServer, type ControllerReads } from './mcp.js';
 import { policySchema, ReadError, ReadonlyService, type ReadServices } from './service.js';
 
 export { createReadonlyMcpServer } from './mcp.js';
+export type { ControllerReads } from './mcp.js';
 export { ReadonlyService, ReadError, LIMITS, UPSTREAM_SHA } from './service.js';
 export const name = 'dsh-readonly-mcp';
 export const inject = ['workspaceRegistry', 'sessions', 'sessionPersistence'];
@@ -13,6 +14,7 @@ const configSchema = z.object({
   port: z.number().int().min(1).max(65535).default(3457),
   authTokenEnv: z.string().regex(/^[A-Z][A-Z0-9_]{0,127}$/).default('DSH_READONLY_MCP_TOKEN'),
   policy: policySchema,
+  controllerReadbackEnabled: z.boolean().default(false),
 }).strict();
 
 export function apply(ctx: Context, input: unknown): void {
@@ -25,9 +27,14 @@ export function apply(ctx: Context, input: unknown): void {
     workspaceRegistry: ctx.get('workspaceRegistry'), sessions: ctx.get('sessions'), sessionPersistence: ctx.get('sessionPersistence'),
   } as ReadServices;
   const service = new ReadonlyService(services, config.policy);
+  const controllerReads = config.controllerReadbackEnabled
+    ? ctx.get('dshControlReadback') as ControllerReads | undefined : undefined;
+  if (config.controllerReadbackEnabled && (!controllerReads ||
+      typeof controllerReads.getPreview !== 'function' || typeof controllerReads.getRunStatus !== 'function'))
+    throw new ReadError('INVALID_CONFIG');
   // No file logger, token-file generation, tunnel manager, hook or background probe.
   const log = { debug() {}, info() {}, warn() {}, error() { ctx.logger.error('Read-only MCP transport error'); } };
-  const ready = startHttpServer(() => createReadonlyMcpServer(service), {
+  const ready = startHttpServer(() => createReadonlyMcpServer(service, controllerReads), {
     host: '127.0.0.1', port: config.port, authMode: 'token', authToken: token,
   }, log);
   void ready.catch(() => ctx.logger.error('Read-only MCP listener unavailable'));
