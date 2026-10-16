@@ -17,6 +17,7 @@ import { randomUUID, timingSafeEqual } from 'node:crypto';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import type { BridgeLogger } from './log.js';
+import { createRestrictedTransportScope, type RestrictedTransportAccess } from './http-context.js';
 import { bridgeHttpUrl, isLoopbackHost } from './config.js';
 
 export interface HttpServerHandle {
@@ -75,7 +76,7 @@ function sendJson(res: ServerResponse, status: number, body: unknown): void {
 }
 
 export function startHttpServer(
-  createSessionServer: () => McpServer,
+  createSessionServer: (access: RestrictedTransportAccess) => McpServer,
   options: { host: string; port: number; authMode: 'token' | 'none'; authToken: string },
   log: BridgeLogger,
 ): Promise<HttpServerHandle> {
@@ -85,6 +86,7 @@ export function startHttpServer(
     );
   }
   return new Promise((resolve, reject) => {
+    const contexts = createRestrictedTransportScope('restricted-transport');
     const authorize = (req: IncomingMessage): boolean => {
       if (options.authMode === 'none') return true;
       const header = req.headers.authorization;
@@ -131,7 +133,7 @@ export function startHttpServer(
         if (existing !== undefined) {
           existing.lastActiveAt = Date.now();
           const parsedBody = req.method === 'POST' ? await readJsonBody(req) : undefined;
-          await existing.transport.handleRequest(req, res, parsedBody);
+          await contexts.run(options.authMode === 'token', () => existing.transport.handleRequest(req, res, parsedBody));
           return;
         }
         if (sessionId !== undefined || req.method !== 'POST') {
@@ -159,7 +161,7 @@ export function startHttpServer(
             if (entry !== undefined) sessions.set(id, entry);
           },
         });
-        entry = { transport, server: createSessionServer(), lastActiveAt: Date.now() };
+        entry = { transport, server: createSessionServer(contexts.access), lastActiveAt: Date.now() };
         await entry.server.connect(transport);
         transport.onclose = () => {
           const id = transport.sessionId;
@@ -167,7 +169,7 @@ export function startHttpServer(
           void entry?.server.close().catch(() => {});
         };
         const parsedBody = req.method === 'POST' ? await readJsonBody(req) : undefined;
-        await transport.handleRequest(req, res, parsedBody);
+        await contexts.run(options.authMode === 'token', () => entry!.transport.handleRequest(req, res, parsedBody));
       } catch (error) {
         log.error(`MCP HTTP request failed: ${error instanceof Error ? error.message : String(error)}`);
         if (!res.headersSent) {
