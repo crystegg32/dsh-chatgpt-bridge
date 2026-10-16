@@ -29,3 +29,15 @@ must explicitly select `dsh-chatgpt-bridge/readonly`.
 - Independent Draft review; separately authorize existing isolated connection discovery and concrete shared Host admission integration.
 ### Needs verification
 - Native WebGPT new-tool calls, account write permissions, Bridge continuation and live control; no deployment or model performed.
+
+## 2026-10-16 — BRI94 restricted transport context
+### Summary
+- Independent PR2-based branch; implement safe transport subset while local confirmation is blocked by RPC provenance.
+### Changed
+- HTTP factory optional opaque request accessor; AsyncLocalStorage plus identity/active lifetime. No bearer/cookie exposure, no tools or new server.
+### Tested
+- tsc PASS; Windows Node45/45 actual HTTP/MCP + readonly compatibility. Context reaches original DSH admission and is denied without approval; fixtures disclosed, no live Controller/Host/model.
+### Next
+- Draft PR and independent source review. Local confirmation alternative must be reviewed before an issuer or real Prepare/Status.
+### Needs verification
+- Human operation approval, Host bootstrap, power-loss policy, platform write entitlement. All writes disabled; no formal connection/tunnel/main/daily/history changes.
